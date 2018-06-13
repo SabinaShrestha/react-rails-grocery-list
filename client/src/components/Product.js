@@ -17,7 +17,7 @@ const Product = ({
   deleteProduct,
 }) => (
   <div className="col s12">
-    <div className="col m8">
+    <div className="col m4">
       <div
         style ={ purchased ? styles.purchased : {} }
         className="center"
@@ -25,7 +25,12 @@ const Product = ({
       {name}
       </div>
     </div>
-      <div className="col m2">
+    <div className="col m4">
+      <div className="center">
+      {category}
+      </div>
+    </div>
+    <div className="col m2">
         <input
           id={`product-${id}`}
           type="checkbox"
