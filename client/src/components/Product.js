@@ -19,7 +19,7 @@ const Product = ({
   <div className="col s12">
     <div className="col m8">
       <div
-        style ={ purchased ? styles.purchase : {} }
+        style ={ purchased ? styles.purchased : {} }
         className="center"
       >
       {name}
@@ -27,7 +27,7 @@ const Product = ({
     </div>
       <div className="col m2">
         <input
-          id={`product=${id}`}
+          id={`product-${id}`}
           type="checkbox"
           defaultChecked={purchased}
           onClick={() => updateProduct(id)}

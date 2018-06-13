@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Product from './Product';
 
 const ProductList = ({products, updateProduct, deleteProduct}) => (
-  <div>
+  <div className="row">
     {products.map(product =>
       <Product
         key={product.id}

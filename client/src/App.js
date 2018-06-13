@@ -30,11 +30,25 @@ class App extends Component {
   }
 
   updateProduct = (id) => {
+    fetch (`/api/products/${id}`, {method: 'PUT'})
+    .then( res => res.json())
+    .then( product => {
+      const products = this.state.products.map(p => {
+        if (p.id === id)
+          return {...p, purchased: !p.purchased}
+          return p
+      })
+      this.setState({products})
+    })
 
   }
 
   deleteProduct = (id) => {
-
+    fetch(`/api/products/${id}`, {method: 'DELETE'})
+    .then(() => {
+      const {products} = this.state;
+      this.setState({ products: products.filter(p => p.id !== id)})
+    })
   }
 
 
